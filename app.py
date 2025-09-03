@@ -32,6 +32,23 @@ def main(page: ft.Page):
         content_customers.controls = []
         content_new_customer.controls = []
         for i in customers:
+            content_pets_of_customer = ft.Column()
+            for p in i.pets:
+                content_pets_of_customer.controls.append(
+                    ft.Row(
+                        [
+                            ft.Text(
+                                value=f"{p.name}"
+                            ),
+                            ft.Dropdown(
+                                
+                            ),
+                        ],
+                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN
+                    )
+
+                )
+
             content_customers.controls.append(
                 ft.Row(
                     [
@@ -43,6 +60,11 @@ def main(page: ft.Page):
                         )
                     ],
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN
+                ),
+                ft.Column(
+                    [
+
+                    ]
                 )
             )
         
